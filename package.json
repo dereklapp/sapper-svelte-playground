@@ -4,7 +4,10 @@
   "description": "Playground for getting to know Svelte/Sapper",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "sapper dev",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
+    "start": "node __sapper__/build"
   },
   "repository": {
     "type": "git",

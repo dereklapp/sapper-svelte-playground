@@ -1,0 +1,19 @@
+{
+  "name": "sapper-svelte-playground",
+  "version": "1.0.0",
+  "description": "Playground for getting to know Svelte/Sapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dereklapp/sapper-svelte-playground.git"
+  },
+  "author": "Derek Lapp <derek.lapp@impellent.co>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dereklapp/sapper-svelte-playground/issues"
+  },
+  "homepage": "https://github.com/dereklapp/sapper-svelte-playground#readme"
+}

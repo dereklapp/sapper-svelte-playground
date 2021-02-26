@@ -25,7 +25,8 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'preventAssignment': true,
 			}),
 			svelte({
 				compilerOptions: {
@@ -101,20 +102,20 @@ export default {
 		onwarn,
 	},
 
-	serviceworker: {
+	serviceworker: !dev && {
 		input: config.serviceworker.input(),
 		output: config.serviceworker.output(),
 		plugins: [
 			resolve(),
 			replace({
-				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				"process.browser": true,
+				"process.env.NODE_ENV": JSON.stringify(mode),
 			}),
 			commonjs(),
-			!dev && terser()
+			!dev && terser(),
 		],
 
 		preserveEntrySignatures: false,
 		onwarn,
-	}
+	},
 };

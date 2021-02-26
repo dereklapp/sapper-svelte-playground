@@ -1,0 +1,26 @@
+// Gutters
+$em-base: 16;
+$gutter: (rem(1400) * 0.03) !default;
+$gutter--sm: ($gutter / 2) !default;
+$gutter--lg: ($gutter * 2) !default;
+$gutter--xl: ($gutter * 4) !default;
+
+// Media Breakpoints
+$screen--xxs: rem(480) !default;
+$screen--xs: rem(600) !default;
+$screen--sm: rem(782) !default;
+$screen--md: rem(960) !default;
+$screen--lg: rem(1200) !default;
+$screen--xl: rem(1400) !default;
+$screen--xxl: rem(1650) !default;
+
+// Z-index elements
+$elements: canvas, labels, inputs, autocomplete, navmenu, submenu, navbar, dialog !default;
+
+// Border radius
+$border-radius: rem(4) !default;
+$border-radius--sm: rem(2) !default;
+$border-radius--lg: rem(6) !default;
+
+// Forms
+$input-height: rem(42);

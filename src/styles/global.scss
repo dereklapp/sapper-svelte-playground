@@ -1,0 +1,51 @@
+// Import depdendencies
+@import './conf.scss';
+
+// Scaffolding
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-stack-helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: $line-height;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: rem(320);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  transition: $link-transition;
+  @include makeTextLink($action-color, $action-color--hover, none);
+}
+
+#sapper {
+  height: 100%;
+}

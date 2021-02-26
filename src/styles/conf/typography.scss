@@ -1,0 +1,19 @@
+// Font stacks
+$font-stack-helvetica: 'Helvetica Neue', 'Helvetica', 'Arial' !default;
+
+// Font sizes
+$font-size: rem(16) !default;
+$font-size--xs: rem(11) !default;
+$font-size--sm: rem(13) !default;
+$font-size--lg: rem(18) !default;
+$font-size--xl: rem(21) !default;
+
+// Spacing/Leading
+$line-height: 1.26 !default;
+$line-height--sm: ($line-height * 0.75) !default;
+$line-height--lg: ($line-height * 1.25) !default;
+
+// Action elements
+$link-decoration: underline !default;
+$link-decoration--hover: none !default;
+$link-transition: all 200ms ease-in-out;

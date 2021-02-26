@@ -1,12 +1,13 @@
 <script>
-  import Nav from '../components/Nav.svelte';
+  import Nav from './../components/Nav.svelte';
   export let segment;
 </script>
 
-<style>
+<style lang="scss" global>
+  @import "./styles/global.scss";
   main {
-    background-color: #f7f8f9;
     height: 100%;
+    background-color: $main-bg-color;
   }
 </style>
 

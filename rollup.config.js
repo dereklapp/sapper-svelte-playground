@@ -8,6 +8,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
+import sveltePreprocess from 'svelte-preprocess'
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -17,6 +18,15 @@ const onwarn = (warning, onwarn) =>
 	(warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
 	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning);
+
+const scssPreProcessor = sveltePreprocess({
+	scss: {
+		includePaths: ['src'],
+	},
+	postcss: {
+		plugins: [require('autoprefixer')],
+	},
+});
 
 export default {
 	client: {
@@ -32,7 +42,8 @@ export default {
 				compilerOptions: {
 					dev,
 					hydratable: true
-				}
+        },
+        preprocess: scssPreProcessor,
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
@@ -83,8 +94,9 @@ export default {
 					dev,
 					generate: 'ssr',
 					hydratable: true
-				},
-				emitCss: false
+        },
+        preprocess: scssPreProcessor,
+				emitCss: false,
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),

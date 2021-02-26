@@ -1,0 +1,15 @@
+/**
+ * rem
+ *
+ * Extracted from Bourbon (https://bourbon.io) to convert pixel values to rem values.
+ *
+ * @param pxval {string} original size in px
+ * @return pxval {string} pxval as a rem unit
+ * @since 1.0.0
+ */
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @return ($pxval / $em-base) * 1rem;
+}

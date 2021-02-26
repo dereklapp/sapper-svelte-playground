@@ -4,9 +4,22 @@
   </title>
 </svelte:head>
 
-<h1>
-  StarWars
-</h1>
+<style lang="scss">
+  @import './../styles/conf.scss';
+  figure {
+    display: block;
+    margin: 0;
+    padding: $gutter;
+    text-align: center;
+    
+    img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0;
+      vertical-align: baseline;
+    }
+	}
+</style>
 
 <figure>
   <img

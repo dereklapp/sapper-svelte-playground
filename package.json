@@ -1,6 +1,6 @@
 {
   "name": "sapper-svelte-playground",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Playground for getting to know Svelte/Sapper",
   "main": "index.js",
   "scripts": {

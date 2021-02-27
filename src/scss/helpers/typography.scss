@@ -1,0 +1,174 @@
+/**
+ * makeUnstyledList
+ *
+ * Removes default formatting from a list.
+ *
+ * @param margin {int} optional margin override.
+ * @since 0.0.3
+ */
+@mixin makeUnstyledList($margin: 0) {
+  margin: $margin;
+  padding: 0;
+  list-style-type: none;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/**
+ * makeButton
+ *
+ * Generate base code for a traditional button element
+ *
+ * @param display {string} display value to set on button.
+ * @param height {string} height value to set on button.
+ * @param padding {string} padding value to set on button. (NOTE: must be shorthand syntax)
+ * @param radius {int} border-radius value to set on button. 
+ * @param background-color {string} background-color value to set on button.
+ * @param border-color {string} border-color value to set on button.
+ * @since 0.0.3
+ */
+@mixin makeButton(
+  $display: inline-block,
+  $height: null,
+  $padding: null,
+  $radius: 0,
+  $background-color: transparent,
+  $border-color: transparent
+) {
+  appearance: none;
+  position: relative;
+  display: $display;
+  height: $height;
+  padding-right: $padding;
+  padding-left: $padding;
+  font-size: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: $radius;
+  line-height: $height - rem(4);
+  box-shadow: 0 ($gutter / 5) ($gutter / 3) 0 rgba($grey--2, 0.13);
+  border: rem(2) solid $border-color;
+  background-color: $background-color;
+}
+
+/**
+ * buttonOverride
+ *
+ * Overrides individual button attributes.
+ *
+ * @param bg-color {string} background-color value to set on button.
+ * @param border {string} border-color value to set on button.
+ * @since 0.0.3
+ */
+@mixin buttonOverride(
+  $background-color: null,
+  $background-color--hover: null,
+  $border-color: null,
+  $border-color--hover: null
+) {
+  @if $background-color != null {
+    background-color: $background-color;
+  }
+  @if $border-color != null {
+    border-color: $background-color;
+  }
+
+  @if $background-color--hover != null or $border-color--hover != null {
+    &:hover,
+    &:active,
+    &:focus {
+      @if $background-color--hover != null {
+        background-color: $border-color;
+      }
+      @if $border-color--hover != null {
+        border-color: $border-color;
+      }
+    }
+  }
+}
+
+/**
+ * makePrimaryButton
+ *
+ * Prefixed mixin for overriding a button with specific styles
+ *
+ * @since 0.0.3
+ */
+@mixin makePrimaryButton() {
+  @include buttonOverride(
+    $brand-primary,
+    $brand-primary,
+    $brand-primary--dark,
+    $brand-primary--dark
+  );
+  @include makeTextLink($white, $white, none);
+}
+
+/**
+ * makeSecondaryButton
+ *
+ * Prefixed mixin for overriding a button with specific styles
+ *
+ * @since 0.0.3
+ */
+@mixin makeSecondaryButton() {
+  @include buttonOverride(
+    $brand-secondary,
+    $brand-secondary,
+    $brand-secondary--dark,
+    $brand-secondary--dark
+  );
+  @include makeTextLink($white, $white, none);
+}
+
+/**
+ * makeTertiaryButton
+ *
+ * Prefixed mixin for overriding a button with specific styles
+ *
+ * @since 0.0.3
+ */
+@mixin makeTertiaryButton() {
+  @include buttonOverride(
+    $brand-tertiary,
+    $brand-tertiary,
+    $brand-tertiary--dark,
+    $brand-tertiary--dark
+  );
+  @include makeTextLink($white, $white, none);
+}
+
+/**
+ * makeTransparentButton
+ *
+ * Prefixed mixin for overriding a button with specific styles
+ *
+ * @since 0.0.3
+ */
+@mixin makeTransparentButton() {
+  @include buttonOverride(transparent, transparent, transparent, transparent);
+  padding-right: 0;
+  padding-left: 0;
+  @include makeTextLink($text-color, $action-color--hover, none);
+}
+
+/**
+ * makeTextLink
+ *
+ * Generate base rules for a standard text link
+ *
+ * @since 0.0.3
+ */
+@mixin makeTextLink($txt: $grey--2, $txt-hover: $grey--1, $decoration: none) {
+  color: $txt;
+  text-decoration: $decoration;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $txt-hover;
+  }
+}

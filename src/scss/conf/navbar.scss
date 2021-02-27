@@ -1,0 +1,17 @@
+// Sizes
+$navbar-height: rem(45) !default;
+$navbar-height--md: rem(90) !default;
+$navbar-height--lg: rem(110) !default;
+$navbar-height--xl: rem(120) !default;
+$navbar-component-height: ($navbar-height - ($gutter / 3)) !default;
+$navbar-trigger-width: ($navbar-height / 2) !default;
+
+// Colours
+$navbar-bgcolor: $white !default;
+$navbar-link-color: $text-color !default;
+$navbar-link-color--hover: $action-color--hover !default;
+
+// Transitions
+$navbar-link-transition: all 240ms ease-out;
+$navbar-mobile-menu-transition: all 480ms cubic-bezier(0.7, 0, 0.3, 1);
+$navbar-desktop-menu-transition: all 120ms ease-in-out;

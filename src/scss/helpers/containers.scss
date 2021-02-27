@@ -1,0 +1,170 @@
+/**
+ * makeContainer
+ *
+ * Global container for centering content.
+ *
+ * @param dir whether to apply to x or y axis
+ * @since 0.0.3
+ */
+@mixin makeContainer($dir: horizontal, $padding: rem(32)) {
+  // Vertical
+  @if $dir == vertical {
+    padding-top: ($padding / 2);
+    padding-bottom: ($padding / 2);
+
+    @include min-screen($screen--sm) {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+
+    @include min-screen($screen--lg) {
+      padding-top: ($padding * 2);
+      padding-bottom: ($padding * 2);
+    }
+
+    @include min-screen($screen--xl) {
+      padding-top: ($padding * 3);
+      padding-bottom: ($padding * 3);
+    }
+  }
+
+  // Horizontal/Default
+  @else {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: ($padding / 2);
+    padding-left: ($padding / 2);
+
+    @include min-screen($screen--sm) {
+      padding-right: $padding;
+      padding-left: $padding;
+    }
+
+    @include min-screen($screen--lg) {
+      padding-right: ($padding * 2);
+      padding-left: ($padding * 2);
+    }
+
+    @include min-screen($screen--xl) {
+      padding-right: ($padding * 3);
+      padding-left: ($padding * 3);
+    }
+
+    @include min-screen($screen--xxl) {
+      padding-right: ($padding * 4);
+      padding-left: ($padding * 4);
+    }
+  }
+}
+
+/**
+ * undoContainer
+ *
+ * Global container for centering content.
+ *
+ * @param dir whether to apply to x or y axis
+ * @since 0.0.3
+ */
+@mixin undoContainer($dir: horizontal) {
+  // Vertical
+  @if $dir == vertical {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  // Horizontal/Default
+  @else {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: none;
+    margin-left: none;
+  }
+}
+
+/**
+ * makeFlex
+ *
+ * Create a flex container that mimics that of the old Bootstrap columns.
+ *
+ * @param indent left/right gutters for columns
+ * @param wrap wrap/nowrap
+ * @param dir row/column
+ * @param justify justify-content override
+ * @param align align-items override
+ * @since 0.0.3
+ */
+@mixin makeFlex($indent: null, $wrap: null, $dir: null, $justify: null, $align: null) {
+  // Apply base rules
+  display: flex;
+  flex-wrap: $wrap;
+
+  // Apply margin indent
+  @if $indent != null {
+    margin-right: $indent;
+    margin-left: $indent;
+  }
+
+  // Apply direction
+  @if $dir != null {
+    flex-direction: $dir;
+  }
+
+  // Apply justification
+  @if $justify != null {
+    justify-content: $justify;
+  }
+
+  // Apply alignment
+  @if $align != null {
+    align-items: $align;
+  }
+}
+
+/**
+ * makeFlexItem
+ *
+ * Create a flex child that mimics that of the old Bootstrap columns.
+ *
+ * @param gutter column gutters
+ * @param grow flex grow true/false
+ * @since 0.0.3
+ */
+@mixin makeFlexItem($gutter: null, $grow: false, $basis: auto) {
+  @if $gutter != null {
+    margin-right: $gutter;
+    margin-left: $gutter;
+  }
+  flex: $grow 0 $basis;
+}
+
+/**
+ * hideElement
+ *
+ * Hide an element visually on the screen.
+ * Only controls visibility; leaves display to invidiaul rules
+ *
+ * @since 0.0.3
+ */
+@mixin hideElement() {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/**
+ * showElement
+ *
+ * Hide an element visually on the screen.
+ * Only controls visibility; leaves display to invidiaul rules
+ *
+ * @since 0.0.3
+ */
+@mixin showElement($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+  visibility: visible;
+  opacity: 1;
+  overflow: visible;
+}

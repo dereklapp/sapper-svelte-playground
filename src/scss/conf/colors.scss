@@ -1,0 +1,65 @@
+// Defaults
+$black: #000 !default;
+$black--filter: brightness(0) !default;
+$white: #fff !default;
+$white--filter: brightness(0) invert(1) !default;
+$grey--1: #1d252c !default;
+$grey--2: #50565c !default;
+$grey--3: #8a8e92 !default;
+$grey--4: #b9bcbf !default;
+$grey--5: #d1d3d5 !default;
+$grey--6: #f7f8f9 !default;
+$grey--filter: invert(10%) sepia(25%) saturate(625%) hue-rotate(166deg) brightness(96%)
+  contrast(90%) !default;
+
+// Notifications
+$success: #28a745 !default;
+$success--dark: darken($success, 5%) !default;
+$success--light: lighten($success, 5%) !default;
+$success--filter: invert(50%) sepia(63%) saturate(591%) hue-rotate(82deg) brightness(92%)
+  contrast(81%) !default;
+$warning: #ffc107 !default;
+$warning--dark: darken($warning, 5%) !default;
+$warning--light: lighten($warning, 5%) !default;
+$warning--filter: invert(82%) sepia(19%) saturate(2826%) hue-rotate(348deg) brightness(100%)
+  contrast(108%) !default;
+$danger: #dc3545 !default;
+$danger--dark: darken($danger, 5%) !default;
+$danger--light: lighten($danger, 5%) !default;
+$modal--backdrop: rgba($black, 0.76) !default;
+$danger--filter: invert(28%) sepia(82%) saturate(1705%) hue-rotate(331deg) brightness(91%)
+  contrast(91%) !default;
+
+// Branding
+$brand-primary: #cab44b !default;
+$brand-primary--light: lighten($brand-primary, 12%) !default;
+$brand-primary--dark: darken($brand-primary, 12%) !default;
+$brand-primary--filter: invert(77%) sepia(52%) saturate(486%) hue-rotate(5deg) brightness(87%)
+  contrast(87%) !default;
+$brand-secondary: #0199d6 !default;
+$brand-secondary--light: lighten($brand-secondary, 12%) !default;
+$brand-secondary--dark: darken($brand-secondary, 12%) !default;
+$brand-secondary--filter: invert(36%) sepia(100%) saturate(785%) hue-rotate(163deg)
+  brightness(107%) contrast(99%) !default;
+$brand-tertiary: #e31d93 !default;
+$brand-tertiary--light: lighten($brand-tertiary, 12%) !default;
+$brand-tertiary--dark: darken($brand-tertiary, 12%) !default;
+$brand-tertiary--filter: invert(20%) sepia(88%) saturate(3306%) hue-rotate(309deg)
+  brightness(91%) contrast(95%) !default;
+
+// Text
+$text-color: $grey--2 !default;
+$text-color--light: desaturate(lighten($text-color, 18%), 12%) !default;
+$text-color--dark: desaturate(darken($text-color, 18%), 12%) !default;
+$text-color--filter: invert(35%) sepia(12%) saturate(338%) hue-rotate(169deg) brightness(88%)
+  contrast(90%) !default;
+$action-color: $brand-primary !default;
+$action-color--hover: darken($action-color, 12%) !default;
+$title-color: $text-color--dark !default;
+$icon-color: $text-color !default;
+
+// UI
+$main-bg-color: $grey--6 !default;
+$border: $grey--5;
+$border--light: lighten($border, 6%);
+$border--dark: darken($border, 6%);

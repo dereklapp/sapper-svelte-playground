@@ -18,7 +18,11 @@
       margin: 0;
       vertical-align: baseline;
     }
-	}
+  }
+  
+  p {
+    text-align: center;
+  }
 </style>
 
 <figure>

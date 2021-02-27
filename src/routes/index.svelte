@@ -5,7 +5,7 @@
 </svelte:head>
 
 <style lang="scss">
-  @import './../styles/conf.scss';
+  @import './../scss/conf.scss';
   figure {
     display: block;
     margin: 0;

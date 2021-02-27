@@ -1,5 +1,5 @@
 <style lang="scss">
-  @import "./styles/conf.scss";
+  @import "./scss/conf.scss";
   main {
     height: 100%;
     background-color: $main-bg-color;

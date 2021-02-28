@@ -95,7 +95,7 @@
       <li aria-current="{segment === 'login' ? 'page' : undefined}">
         <a
           rel=prefetch
-          href="blog"
+          href="login"
           >
           Login
         </a>

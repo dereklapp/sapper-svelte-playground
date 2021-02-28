@@ -1,0 +1,51 @@
+/**
+ * makeCard
+ *
+ * mixiin for styling custom cards or re-styling Wordpress blocks.
+ 
+ * @since 0.01
+ */
+@mixin makeCard() {
+  background-color: rgba($white, 0.96);
+  border-radius: rem(4);
+  display: block;
+  box-shadow: 0 ($gutter / 6) ($gutter / 2) 0 rgba($grey--2, 0.13);
+  will-change: min-height;
+
+  &__inner {
+    display: block;
+    position: relative;
+    padding: ($gutter / 2);
+    height: 100%;
+
+    @include min-screen($screen--md) {
+      padding: $gutter;
+    }
+  }
+
+  &__title {
+    @include makeH2();
+    position: relative;
+    padding-bottom: $gutter;
+
+    @include min-screen($screen--md) {
+      padding-bottom: ($gutter * 2);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: (-($gutter / 2));
+      bottom: ($gutter / 2);
+      left: (-($gutter / 2));
+      height: rem(1);
+      background-color: darken($main-bg-color, 3%);
+
+      @include min-screen($screen--md) {
+        right: (-($gutter));
+        bottom: $gutter;
+        left: (-($gutter));
+      }
+    }
+  }
+}

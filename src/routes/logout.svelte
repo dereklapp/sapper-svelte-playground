@@ -8,33 +8,34 @@
 
     console.log('kill session');
     // Submit to Logout
-    // const response = await this.fetch("/logout", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Accept": "application/json",
-    //   },
-    //   body: '',
-    // });
+    const response = await this.fetch("/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: '',
+    });
 
-    // const parsed = await response.json();
+    const parsed = await response.json();
 
-    // if (parsed.error) {
-    //   error = parsed.error;
-    // } else {
-    //   return {
-    //     response: parsed
-    //   };
-    // }
+    if (parsed.error) {
+      error = parsed.error;
+    } else {
+      return {
+        response: parsed
+      };
+    }
   }
 </script>
 
 <script>
-  // import { goto, stores } from "@sapper/app";
-  // const { session } = stores();
+  import { goto, stores } from "@sapper/app";
+  const { session } = stores();
 
-  // export let response;
-  // $session = response;
+  export let response;
+  $session = response;
+  console.log(response);
   // goto("/login");
 </script>
 

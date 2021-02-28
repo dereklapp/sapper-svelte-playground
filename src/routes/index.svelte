@@ -1,41 +1,54 @@
 <svelte:head>
 	<title>
-    StarWars
+    Sapper Test
   </title>
 </svelte:head>
 
 <style lang="scss">
   @import './../scss/conf.scss';
-  figure {
-    display: block;
-    margin: 0;
-    padding: $gutter;
-    text-align: center;
-    
-    img {
-      width: 100%;
-      max-width: 400px;
-      margin: 0;
-      vertical-align: baseline;
+
+  article {
+    @include makeContainer();
+
+    section {
+      @include makeContainer(vertical);
+
+      figure {
+        display: block;
+        margin: 0;
+        text-align: center;
+
+        img {
+          display: inline-block;
+          vertical-align: baseline;
+          width: 90%;
+          height: auto;
+          max-width: $screen--xs;
+        }
+
+        figcaption {
+          display: block;
+          margin-top: ($gutter / 2);
+          font-weight: 700;
+          font-style: italic;
+          color: $grey--1;
+          font-size: rem(36);
+        }
+      }
     }
-  }
-  
-  p {
-    text-align: center;
   }
 </style>
 
-<figure>
-  <img
-    alt='Borat'
-    src='great-success.png'
-    >
-</figure>
-
-<p>
-  <strong>
-    <em>
-      Very nice!
-    </em>
-  </strong>
-</p>
+<article>
+  <section>
+    <figure>
+      <img
+        alt='Borat'
+        src='great-success.png'
+        >
+        <figcaption>
+          Very nice!
+        </figcaption>
+    </figure>
+  </section>
+</article>

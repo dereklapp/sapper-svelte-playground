@@ -1,5 +1,22 @@
+<script context="module">
+  // export async function preload(page, session) {
+  //   // Return session data for conditional display
+  //   return {
+  //     session: session
+  //   };
+  // }
+</script>
+
+<script>
+  // import Nav from '../components/Nav.svelte';
+
+  // export let segment;
+  // export let session;
+</script>
+
 <style lang="scss">
   @import "./scss/conf.scss";
+
   main {
     height: 100%;
     background-color: $main-bg-color;
@@ -13,6 +30,11 @@
     min-width: rem(320);
   }
 </style>
+
+<!-- <Nav
+  {segment}
+  {session}
+  /> -->
 
 <main>
   <slot></slot>

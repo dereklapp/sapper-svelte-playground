@@ -1,8 +1,9 @@
 <script context="module">
   export async function preload(page, session) {
+    const { token } = session;
     // Return session data for conditional display
     return {
-      session: session
+      token: token
     };
   }
 </script>
@@ -11,8 +12,7 @@
   import Nav from '../components/Nav.svelte';
 
   export let segment;
-  export let session;
-  console.log(session);
+  export let token;
 </script>
 
 <style lang="scss">
@@ -34,7 +34,7 @@
 
 <Nav
   {segment}
-  {session}
+  {token}
   />
 
 <main>

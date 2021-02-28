@@ -1,6 +1,6 @@
 <script>
   export let segment;
-  export let session;
+  export let token;
 </script>
 
 <style lang="scss">
@@ -74,7 +74,7 @@
         Home
       </a>
     </li>
-    {#if session.token !== undefined}
+    {#if token !== undefined}
       <li aria-current="{segment === 'account' ? 'page' : undefined}">
         <a
           rel=prefetch

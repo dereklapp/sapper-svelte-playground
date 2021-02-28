@@ -33,7 +33,8 @@
     } else {
       $session.token = parsed.token;
       $session.email = parsed.email;
-      goto("/account");
+      // goto("/account");
+      location.replace("/account");
     }
   };
 </script>

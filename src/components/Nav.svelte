@@ -74,7 +74,7 @@
         Home
       </a>
     </li>
-    {#if session.token.length}
+    {#if session.token !== undefined}
       <li aria-current="{segment === 'account' ? 'page' : undefined}">
         <a
           rel=prefetch

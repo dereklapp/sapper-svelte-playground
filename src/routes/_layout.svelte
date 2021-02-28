@@ -1,17 +1,18 @@
 <script context="module">
-  // export async function preload(page, session) {
-  //   // Return session data for conditional display
-  //   return {
-  //     session: session
-  //   };
-  // }
+  export async function preload(page, session) {
+    // Return session data for conditional display
+    return {
+      session: session
+    };
+  }
 </script>
 
 <script>
-  // import Nav from '../components/Nav.svelte';
+  import Nav from '../components/Nav.svelte';
 
-  // export let segment;
-  // export let session;
+  export let segment;
+  export let session;
+  console.log(session);
 </script>
 
 <style lang="scss">
@@ -31,10 +32,10 @@
   }
 </style>
 
-<!-- <Nav
+<Nav
   {segment}
   {session}
-  /> -->
+  />
 
 <main>
   <slot></slot>

@@ -7,6 +7,7 @@
   @import './../scss/conf.scss';
   .card {
     @include makeCard();
+    height: 100%;
 
     &__title {
       color: $grey--1;

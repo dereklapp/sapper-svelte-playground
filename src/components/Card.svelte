@@ -5,7 +5,6 @@
 
 <style lang="scss">
   @import './../scss/conf.scss';
-  @import './../scss/helpers/blocks.scss';
   .card {
     @include makeCard();
 

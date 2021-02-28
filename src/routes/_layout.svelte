@@ -19,7 +19,7 @@
   @import "./scss/conf.scss";
 
   main {
-    height: 100%;
+    min-height: 100vh;
     background-color: $main-bg-color;
     font-family: $font-stack-helvetica, sans-serif;
     font-weight: 400;

@@ -35,9 +35,7 @@
 
   export let response;
   $session.token = response.token;
-    $session.email = response.email;
+  $session.email = response.email;
   console.log(response);
-  // goto("/login");
+  goto("/login");
 </script>
-
-logout

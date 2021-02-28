@@ -34,7 +34,8 @@
   const { session } = stores();
 
   export let response;
-  $session = response;
+  $session.token = response.token;
+    $session.email = response.email;
   console.log(response);
   // goto("/login");
 </script>

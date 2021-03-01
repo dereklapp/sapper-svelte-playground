@@ -172,3 +172,82 @@
     color: $txt-hover;
   }
 }
+
+/**
+ * makeTitle
+ *
+ * Generate consistent title style rules
+ *
+ * @since 0.0.1
+ */
+@mixin makeTitle() {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/**
+ * makeH1
+ *
+ * Generate consistent h1 style rules
+ *
+ * @since 0.0.1
+ */
+@mixin makeH1() {
+  @include makeTitle();
+  font-size: rem(30);
+
+  @include min-screen($screen--sm) {
+    font-size: rem(36);
+  }
+
+  @include min-screen($screen--md) {
+    font-size: rem(48);
+  }
+}
+
+/**
+ * makeH2
+ *
+ * Generate consistent h1 style rules
+ *
+ * @since 0.0.1
+ */
+@mixin makeH2() {
+  @include makeTitle();
+  display: block;
+  line-height: 1.2;
+  font-size: rem(21);
+
+  @include min-screen($screen--md) {
+    font-size: rem(24);
+  }
+}
+
+/**
+ * makeUntyledList
+ *
+ * Remove all default spacing/styles on a list element
+ *
+ * @since 0.0.1
+ */
+@mixin makeUnstyledList() {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &::before,
+  &::after {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}

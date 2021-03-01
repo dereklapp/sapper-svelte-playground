@@ -2,10 +2,12 @@
 @import "node_modules/sass-mediaqueries/media-queries";
 
 @import "./helpers/rem.scss";
-@import "./helpers/containers.scss";
-@import "./helpers/typography.scss";
 
 // Import settings
 @import './conf/utilities.scss';
 @import './conf/colors.scss';
 @import './conf/typography.scss';
+
+@import "./helpers/containers.scss";
+@import "./helpers/typography.scss";
+@import "./helpers/blocks.scss";

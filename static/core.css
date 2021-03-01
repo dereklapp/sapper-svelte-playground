@@ -573,6 +573,15 @@ body {
   height: 100%;
 }
 
+button,
+[type=button],
+[type=reset],
+[type=submit],
+a {
+  transition: all 240ms ease-in-out;
+  cursor: pointer;
+}
+
 #sapper {
   height: 100%;
 }

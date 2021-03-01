@@ -26,7 +26,6 @@ export async function post(req, res) {
     const xml = await xmlResponse.text();
     var xmlParser = new xml2js.Parser();
     const jsonResponse = await xmlParser.parseStringPromise(xml);
-    console.log(jsonResponse);
 
     // Check for errors
     if (typeof jsonResponse.response.error !== "undefined") {

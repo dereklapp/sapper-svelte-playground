@@ -17,6 +17,7 @@
   let error;
 
   const handleLogin = async () => {
+    console.log('submit form data to login');
     const response = await fetch("/login", {
       method: "POST",
       headers: {
@@ -27,6 +28,8 @@
     });
 
     const parsed = await response.json();
+    console.log(response);
+    console.log(parsed);
 
     if (parsed.error) {
       error = parsed.error;
@@ -34,7 +37,7 @@
       $session.token = parsed.token;
       $session.email = parsed.email;
       // goto("/account");
-      location.replace("/account");
+      // location.replace("/account");
     }
   };
 </script>

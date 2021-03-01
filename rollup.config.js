@@ -8,7 +8,7 @@ import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
-import sveltePreprocess from 'svelte-preprocess'
+import sveltePreprocess from 'svelte-preprocess';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -44,6 +44,13 @@ export default {
 					hydratable: true
         },
         preprocess: scssPreProcessor,
+        onwarn: (warning, handler) => {
+          const { code, frame } = warning;
+          if (code === "css-unused-selector")
+            return;
+
+          handler(warning);
+        },
 			}),
 			url({
 				sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
@@ -77,13 +84,13 @@ export default {
 			})
 		],
 
-		preserveEntrySignatures: false,
+    preserveEntrySignatures: false,
 		onwarn,
 	},
 
 	server: {
 		input: config.server.input(),
-		output: config.server.output(),
+    output: { ...config.server.output(), exports: 'default' },
 		plugins: [
 			replace({
 				'process.browser': false,

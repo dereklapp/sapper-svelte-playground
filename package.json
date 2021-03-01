@@ -38,7 +38,8 @@
     "sapper": "^0.29.1",
     "sass-mediaqueries": "^1.6.1",
     "svelte": "^3.34.0",
-    "svelte-preprocess": "^4.6.9"
+    "svelte-preprocess": "^4.6.9",
+    "vercel-sapper": "^0.44.0"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

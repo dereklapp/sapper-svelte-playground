@@ -106,3 +106,5 @@ dist
 # Ignore sapper
 /__sapper__/
 .sessions
+
+.vercel

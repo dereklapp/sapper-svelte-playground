@@ -11,32 +11,33 @@ const dev = NODE_ENV === 'development';
 
 const FileStore = new sessionFileStore(session);
 
-polka() // You can also use Express
-  .use(
-    json(),
-    session({
-      secret: 'SomeSecretStringThatIsNotInGithub',
-      resave: true,
-      saveUninitialized: true,
-      cookie: {
-        maxAge: 31536000
-      },
-      store: new FileStore({
-        path: `.sessions`
-      })
-    }),
-    compression({ threshold: 0 }),
-    sirv('static', { dev }),
-    sapper.middleware({
-      session: (req, res) => {
-        return ({
-          token: req.session.token,
-          email: req.session.email
-        })
-      }
+// Make server instance exportable
+const app = polka();
+app.use(
+  json(),
+  session({
+    secret: 'SomeSecretStringThatIsNotInGithub',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 31536000
+    },
+    store: new FileStore({
+      path: `.sessions`
     })
-  )
-  .listen(PORT, err => {
-    if (err) console.log('error', err);
-  });
-  
+  }),
+  compression({ threshold: 0 }),
+  sirv('static', { dev }),
+  sapper.middleware({
+    session: (req, res) => {
+      return ({
+        token: req.session.token,
+        email: req.session.email
+      })
+    }
+  })
+)
+.listen(PORT, err => {
+  if (err) console.log('error', err);
+});
+export default app;

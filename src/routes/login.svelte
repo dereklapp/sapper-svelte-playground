@@ -18,6 +18,7 @@
 
   const handleLogin = async () => {
     console.log('submit form data to login');
+    console.log({ email, password });
     const response = await fetch("/login", {
       method: "POST",
       headers: {
@@ -26,6 +27,7 @@
       },
       body: JSON.stringify({ email, password }),
     });
+    console.log(response);
 
     const parsed = await response.json();
     console.log(response);
